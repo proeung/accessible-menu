@@ -1,0 +1,32 @@
+{
+  "name": "accessible-menu",
+  "version": "0.0.1",
+  "description": "A sandbox app that generates WCAG accessible menus.",
+  "author": {
+    "name": "Putra Bonaccorsi",
+    "url": "https://www.iamputra.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss public/css/app.css -o public/build/app.css --watch\"  \"live-server ./public\"",
+    "development": "cross-env NODE_ENV=development postcss public/css/app.css -o public/build/app.css",
+    "production": "cross-env NODE_ENV=production postcss public/css/app.css -o public/build/app.css"
+  },
+  "dependencies": {
+    "postcss-calc": "^7.0.1",
+    "postcss-import": "^12.0.1",
+    "postcss-nesting": "^7.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^7.0.0",
+    "cross-env": "^5.2.0",
+    "live-server": "^1.2.1",
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.11"
+  }
+}

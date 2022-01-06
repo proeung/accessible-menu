@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'SofiaPro';
+    font-weight: 300;
+    src: url('../fonts/351114_1_0.eot');
+    src: url('../fonts/351114_1_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/351114_1_0.woff2') format('woff2'),
+    url('../fonts/351114_1_0.woff') format('woff'),
+    url('../fonts/351114_1_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SofiaPro';
+    font-weight: 700;
+    src: url('../fonts/351114_0_0.eot');
+    src: url('../fonts/351114_0_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/351114_0_0.woff2') format('woff2'),
+    url('../fonts/351114_0_0.woff') format('woff'),
+    url('../fonts/351114_0_0.ttf') format('truetype');
+}

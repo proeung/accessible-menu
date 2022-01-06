@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "partials/fonts";
+
+
+@layer components {
+
+  /* Hamburger Button */
+  .hamburger-button.active,
+  .hamburger-button[aria-expanded="true"] {
+    .line-1 {
+      @apply translate-y-0 rotate-45;
+    }
+    
+    .line-2 {
+      @apply opacity-0 translate-x-3;
+    }
+
+    .line-3 {
+      @apply translate-y-0 -rotate-45;
+    }
+  }
+
+  /* Accessible Menu */
+  ul.accessible-menu {
+
+    &.menu-is-open {
+      @apply block lg:flex;
+    }
+
+    > li {
+      @apply lg:flex;
+    }
+
+    li {
+      @apply m-0;
+
+      button {
+        @apply border-b-2 text-lg text-gray-900 font-medium py-4 lg:py-8 px-4 w-full lg:w-auto lg:border-b-0;
+      }
+
+      &:last-child {
+        button {
+          @apply border-b-0;
+        }
+      }
+    }
+
+    button:focus,
+    ul li a:focus {
+      @apply outline outline-2 text-blue-900 outline-offset-[-2px] outline-blue-900 relative;
+    }
+
+    button:hover,
+    button[aria-expanded="true"] {
+      @apply text-blue-900;
+    }
+
+    button[aria-expanded="true"] {
+      svg {
+        @apply rotate-180;
+      }
+    }
+
+    ul li a:focus {
+      @apply outline-offset-[2px];
+    }
+
+    ul li a:hover {
+      @apply text-blue-900 underline;
+    }
+
+    /* Submenu */
+    ul.accessible-menu__sub-menu {
+      top: calc(100% + 1px);
+      @apply block bg-white invisible rounded-b-md shadow-lg list-none m-0 p-4 space-y-2 lg:absolute lg:right-0 lg:p-8 lg:space-y-4;
+
+      li {
+        @apply text-lg font-medium;
+
+        a {
+          @apply block lg:inline-block;
+        }
+      }
+    }
+
+    ul.accessible-menu__sub-menu--mega {
+      @apply container lg:grid lg:grid-cols-3 lg:gap-20 space-y-6 lg:space-y-0;
+
+      span {
+        @apply block font-bold text-xl text-gray-600 mb-2 lg:mb-6 lg:text-2xl;
+      }
+
+      ul {
+        @apply grid grid-cols-1 gap-3;
+      }
+    }
+
+  }
+}

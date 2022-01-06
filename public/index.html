@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/build/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:300,400&display=swap" rel="stylesheet">
+    <title>Acessible Menu</title>
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <!-- Social -->
+    <meta property="og:title" content="Accessible Menu">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iamputra.com">
+    <meta property="og:description" content="A sandbox app that generates WCAG accessible menus.">
+    <meta property="og:site_name" content="Accessible Menu">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+  </head>
+  <body class="bg-gray-100 overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="bg-white relative w-full z-50" role="banner">
+      <div class="container mx-auto">
+        <div class="flex items-center flex-wrap flex-nowrap relative">
+
+          <!-- Logo -->
+          <a class="flex-none text-blue-900 bg-blue-800 rounded-md hover:bg-blue-600 focus:bg-blue-600" href="#">
+            <span class="sr-only">Acessible Menu Logo</span>
+            <span class="inline-flex items-center justify-center p-2 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- Navigation -->
+          <nav aria-label="Acessible Menu Title" class="w-full flex-none w-auto ml-auto flex items-center">
+            <!-- Keyboard navigation instructions -->
+            <div class="menu-help-instructions absolute bg-white top-[150%] left-0 w-[600px] rounded-md hidden lg:block sr-only shadow-lg p-8">
+              <h3 class="font-bold leading-snug mb-4">Menu Navigation Tips</h3>
+              <p class="font-sans-secondary text-gray-700" aria-labelledby="menu-help-instructions-title">
+                <span id="menu-help-intro">The following menu has 2 levels.</span>
+                <span id="menu-help-menus">Use left and right arrow keys to navigate between menus.</span>
+                <span id="menu-help-submenu">Use up and down arrow keys to explore within a submenu.</span>
+                <span id="menu-help-activate">Use enter to activate.</span> Within a submenu, <span id="menu-help-escape-submenu">use escape to move to top level menu parent.</span> From top level menus, <span id="menu-help-escape-menu">use escape to exit the menu.</span>
+              </p>
+            </div>
+            <!-- /Keyboard navigation instructions -->
+
+            <!-- Hamburger Menu -->
+            <button class="hamburger-button bg-gray-100 flex h-10 w-10 items-center rounded-md space-x-2 my-3 lg:hidden" aria-label="Toggle Hamburger menu" aria-expanded="false" aria-controls="main-menu" aria-haspopup="true">
+              <span class="sr-only">Open Hamburger Menu</span>
+              <div class="w-6 flex items-center justify-center relative">
+                <span class="line-1 transform transition -translate-y-2 w-full h-0.5 bg-current absolute"></span>
+                <span class="line-2 transform transition w-full opacity-100 h-0.5 bg-current absolute"></span>
+                <span class="line-3 transform transition translate-y-2 w-full h-0.5 bg-current absolute"></span>
+              </div>
+            </button>
+
+            <!-- Menu -->
+            <ul class="accessible-menu bg-white absolute hidden left-0 top-[120%] rounded-md shadow-lg w-full list-none m-0 p-0 font-sans lg:static lg:w-auto lg:bg-transparent lg:flex lg:rounded-none lg:shadow-none">
+              <li>
+                <button aria-expanded="true" aria-haspopup="true" aria-controls="id_menu_1" class="flex items-center">
+                  Plan Your Visit
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <ul id="id_menu_1" class="accessible-menu__sub-menu accessible-menu__sub-menu--mega" role="menu">
+                  <li>
+                    <span role="none">Plan Your Visit</span>
+                    <ul>
+                      <li>
+                        <a href="#" role="menuitem">Parking & Directions</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Shopping & dining</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Group Visits</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Accessiblility</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span role="menuitem">Experience the Museum</span>
+                    <ul>
+                      <li>
+                        <a href="#" role="menuitem">Exhibitions</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Live Theater</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Nature Gardens</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Guided Tours</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="hidden lg:block">
+                      <img class="rounded-md" src="https://fpoimg.com/960x540?bg_color=1d4ed8&text_color=fff" alt="imgAlt">
+                      <div class="mt-4">
+                        <div>
+                          <div class="text-xs text-gray-600 uppercase font-bold tracking-wider">Eyebrow</div>
+                          <div class="font-bold text-gray-700 leading-snug">
+                            <a href="#" class="hover:underline">Hours & Admission</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button aria-expanded="true" aria-haspopup="true" aria-controls="id_menu_2" class="flex items-center">
+                  Research & Collections
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <ul id="id_menu_2" class="accessible-menu__sub-menu accessible-menu__sub-menu--mega" role="menu">
+                  <li>
+                    <span role="none">Research</span>
+                    <ul>
+                      <li>
+                        <a href="#" role="menuitem">Parking & Directions</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Shopping & Dining</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Group Visits</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Accessiblility</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span role="none">Collections</span>
+                    <ul>
+                      <li>
+                        <a href="#" role="menuitem">Exhibitions</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Live Theater</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Nature Gardens</a>
+                      </li>
+                      <li>
+                        <a href="#" role="menuitem">Guided Tours</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="hidden lg:block">
+                      <img class="rounded-md" src="https://fpoimg.com/960x540?bg_color=2563eb&text_color=fff" alt="imgAlt">
+                      <div class="mt-4">
+                        <div>
+                          <div class="text-xs text-gray-600 uppercase font-bold tracking-wider">Eyebrow</div>
+                          <div class="font-bold text-gray-700 leading-snug">
+                            <a href="#" class="hover:underline">Search the Collection</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button aria-expanded="true" aria-haspopup="true" aria-controls="id_menu_3" class="flex items-center">
+                  Support
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <ul id="id_menu_3" class="accessible-menu__sub-menu" role="menu">
+                  <li>
+                    <a href="#" role="menuitem">Membership</a>
+                  </li>
+                  <li>
+                    <a href="#" role="menuitem">Ways to Give</a>
+                  </li>
+                  <li>
+                    <a href="#" role="menuitem">Corporate Support</a>
+                  </li>
+                  <li>
+                    <a href="#" role="menuitem">Volunteer</a>
+                  </li>
+                  <li>
+                    <a href="#" role="menuitem">Make a Donation</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <!-- /Menu -->
+          </nav>
+          <!-- /Navigation -->
+        </div>
+      </div>
+    </header>
+    <!-- /Header -->
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gradient-to-r from-blue-900 to-blue-800 footer overflow-hidden relative mt-[700px]">
+      <svg class="absolute w-full z-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1435 74">
+        <path class="fill-current text-gray-100" d="M0 0h1440v74C1200 27.3 960 4 720 4S240 27.3 0 74V0z" fill="none" />
+      </svg>
+      <div class="container flex flex-wrap h-full items-center mx-auto text-white text-center">
+        <div class="footer-top self-start w-full">
+          <h1 class="text-3xl md:text-5xl font-bold font-sans text-white mt-16 sm:mt-100 mb-4 tracking-tight">accessible menu</h1>
+          <p class="text-base sm:text-xl text-blue-300 font-sans-primary w-4/5 sm:max-w-xl mx-auto">A sandbox app that demonstrates WCAG accessible mega menu using Tailwind CSS v.3 and extending from Disclosure Menus.</p>
+        </div>
+        <div class="sm:flex footer-bottom border-t border-blue-700 border-solid self-end mt-100 pt-12 pb-12 sm:pt-70 sm:pb-70 w-full">
+          <div class="mx-auto w-11/12 pb-4 sm-pb-0 sm:w-1/3 text-center">
+            <p class="text-sm text-blue-300 font-light">© 2022, all rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- /Footer -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
