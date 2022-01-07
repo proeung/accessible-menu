@@ -1,6 +1,6 @@
 # accessible-menu
 
-A sandbox app that demonstrates WCAG accessible mega menu using Tailwind CSS v.3 and extending from Disclosure Menus.
+A sandbox static page that demonstrates WCAG accessible mega menu using Tailwind CSS v.3 and extending from Disclosure Menus.
 
 To get started:
 
@@ -39,5 +39,3 @@ npm run production
 # Using Yarn
 yarn run production
 ```
-
-After that's done, check out `./public/build/style.css` to see the optimized output.
