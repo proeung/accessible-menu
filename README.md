@@ -2,6 +2,9 @@
 
 A sandbox static page that demonstrates WCAG accessible mega menu using Tailwind CSS v.3 and extending from Disclosure Menus.
 
+![Screen Shot 2022-01-18 at 5 39 22 PM](https://user-images.githubusercontent.com/1815714/150030281-1d0b82ae-e39f-4605-bfb2-172d74da676b.png)
+
+
 To get started:
 
 1. Install the dependencies:
